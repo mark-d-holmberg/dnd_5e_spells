@@ -51,7 +51,7 @@ def fmt_spell_text(text):
   full_text = []
   lines = text.split('<br> ')
   for line in lines:
-    full_text.append('text | <span style="font-size:%spx"> %s' % (
+    full_text.append('text | <span style="font-size:%spx">%s' % (
       font_size, line))
   return full_text
 
@@ -64,7 +64,7 @@ def fmt_spell_title(title):
   if len(title) > 29:
     font_size = 11
 
-  return '<span style="font-size:%spx"> %s' % (font_size, title)
+  return '<span style="font-size:%spx">%s' % (font_size, title)
 
 def gen_spell_json(src_file, json_tmpl):
   desired_spells = get_spell_index(src_file, 0)
@@ -88,7 +88,7 @@ def gen_spell_json(src_file, json_tmpl):
         contents.append('rule')
         contents.extend(fmt_spell_text(row[14]))
         contents.append('fill')
-        contents.append('text | <span style="font-size:8px"> [%s]' % row[19])
+        contents.append('subtitle | <span style="font-size:8px">[%s]' % row[19])
 
         spell['title'] = fmt_spell_title(row[3])
         spell['tags'] = ['spell_level_%s' % row[4], row[0]]
