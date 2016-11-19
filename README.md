@@ -3,9 +3,15 @@
 ## Author: austen0
 
 ### Summary
-This project is intended to generate JSON files compatible with the RPG Card generator at https://crobi.github.io/rpg-cards/. The spell source file contains all (maybe?) from the PHB and EE.
+This project is intended to generate JSON files compatible with [crobi's RPG-cards](https://crobi.github.io/rpg-cards/).
 
 ### Instructions
+
+**Get a source file:**
+
+There is a spell source file that is hosted [elsewhere](https://mega.nz/#!Ooli3J6J!S9YI-WdyT5n4GHxUVE_0BUgR27X8mxAcib8StUOLL6Q). *The contents of the source file are copyright of Wizards of the Coast. I do not advocate the use of this file if you do not own the [Dungeon's & Dragons 5th Edition Player Handbook](https://www.amazon.com/gp/product/0786965606/).*
+
+Assuming you have obtained a source file, place in the same directory as `spell_cards.py`.
 
 **Create a new spell list:**
 
@@ -57,3 +63,7 @@ Example: --color darkgreen
 Syntax:  --icon_back ${icon}
 Example: --icon_back heavy-thorny-triskelion
 ```
+
+**Generate spell cards:**
+
+Load your file into the [RPG-cards generator](https://crobi.github.io/rpg-cards/generator/generate.html), tweak settings as you would like, and generate.
