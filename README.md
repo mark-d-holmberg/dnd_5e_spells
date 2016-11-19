@@ -1,6 +1,6 @@
 
 # D&D 5e Spell JSON Generator
-## Author: austen
+## Author: austen0
 
 ### Summary
 This project is intended to generate JSON files compatible with the RPG Card generator at https://crobi.github.io/rpg-cards/. The spell source file contains all (maybe?) from the PHB and EE.
