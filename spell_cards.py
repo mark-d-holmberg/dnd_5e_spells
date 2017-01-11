@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 import argparse
 import csv
 import json
+import sys
 
-from pprint import pprint
 
 __author__ = 'austen0'
 
@@ -106,7 +106,6 @@ def gen_spell_json(src_file, json_tmpl):
     print 'Generated %s spells to \'%s\':' % (len(found_spells), out_name)
     for s in found_spells:
       print s
-    #pprint(spells)
   else:
     print 'No spells in list.'
 
@@ -143,10 +142,11 @@ def arg_parser():
     type=str,
     help='specify card back icon'
   )
-  return parser.parse_args()
+  return parser
 
 def main():
-  args = arg_parser()
+  parser = arg_parser()
+  args = parser.parse_args()
 
   json_tmpl = { 'count': 1 }
   if args.color:
@@ -156,8 +156,16 @@ def main():
 
   if args.new_spell_list:
     new_spell_list(args.new_spell_list, args.classes)
-  if args.gen_spell_json:
+  elif args.gen_spell_json:
     gen_spell_json(args.gen_spell_json, json_tmpl)
+  else:
+    print 'Missing arg!'
+    parser.print_help()
 
 if __name__ == '__main__':
-  main()
+  if sys.version_info[:2] != (2, 7):
+    print('This script is only compatible with Python 2.7.')
+    print('You\'re using version %d.%d' % (
+      sys.version_info[0], sys.version_info[1]))
+  else:
+    main()
