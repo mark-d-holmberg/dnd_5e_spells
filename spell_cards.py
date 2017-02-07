@@ -29,7 +29,10 @@ def get_spell_index(src_file, index):
   spell_index = []
   with open(src_file, 'rb') as src:
     reader = csv.reader(src)
-    reader.next()
+    
+    if src_file == SPELLS:
+      reader.next()
+    
     for row in reader:
       if not row[index].startswith('#'):
         spell_index.append(row[index])
