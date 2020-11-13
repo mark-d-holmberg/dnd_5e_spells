@@ -67,7 +67,8 @@ def fmt_spell_title(title):
   if len(title) > 29:
     font_size = 11
 
-  return '<span style="font-size:%spx">%s' % (font_size, title)
+  # return '<span style="font-size:%spx">%s' % (font_size, title)
+  return '%s' % (title)
 
 def gen_spell_json(src_file, json_tmpl):
   desired_spells = get_spell_index(src_file, 0)
